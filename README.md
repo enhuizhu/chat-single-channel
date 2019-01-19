@@ -15,3 +15,12 @@ npm run start
 ```
 npm run server
 ```
+
+### 4. test account
+
+```
+{
+  username: 'rebecka',
+  password: 'secret'
+}
+```

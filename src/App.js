@@ -84,12 +84,6 @@ export default class App extends React.Component {
             <SearchBox className='pull-right margin-top-10' onSearch={this.onSearch}></SearchBox>
             <div className='clear'></div>
             <div>
-              {/* <button onClick={() => {
-                this.props.login({
-                  username: 'rebecka',
-                  password: 'secret'
-                })
-              }}>login</button> */}
               <div style={{width:'80%'}} className='pull-left'>
                 <ListWrapper title='Games'>
                   <GameList items={

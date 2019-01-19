@@ -19,8 +19,6 @@ export default (props) => {
         </div>
         <div>
           <Button btnClass='pull-right' onClick={() => {
-            console.log('username', username.value);
-            console.log('password', password.value);
             props.login({
               username: username.value,
               password: password.value
