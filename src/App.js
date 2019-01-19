@@ -45,7 +45,6 @@ export default class App extends React.Component {
   }
 
   logOut() {
-    this.setState({showLoginForm: false})
     this.props.logout(this.props.userInfo);
   }
 
@@ -67,6 +66,12 @@ export default class App extends React.Component {
     ApiService.getGameData().then((data) => {
       this.setState(data.data);
     });
+  }
+
+  componentWillReceiveProps(props) {
+    if (props.userInfo) {
+      this.setState({showLoginForm: false});
+    }
   }
 
   render() {
