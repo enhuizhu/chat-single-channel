@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test form test if it render correctly 1`] = `
+<div
+  className="login-form-overlay"
+>
+  <div
+    className="login-form-container"
+  >
+    <div>
+      <input
+        placeholder="username"
+        type="text"
+      />
+    </div>
+    <div>
+      <input
+        placeholder="password"
+        type="password"
+      />
+    </div>
+    <div>
+      <div
+        className="btn pull-right"
+        onClick={[Function]}
+      >
+        Login
+      </div>
+      <div
+        className="btn pull-right"
+      >
+        Cancel
+      </div>
+      <div
+        className="clear"
+      />
+    </div>
+  </div>
+</div>
+`;

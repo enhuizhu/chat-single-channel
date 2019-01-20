@@ -18,3 +18,8 @@ npm run server
   password: 'secret'
 }
 ```
+
+### 4. run unit test
+```
+npm run test
+```
