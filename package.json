@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
-    "server": "node ./server/server.js"
+    "frontend-build": "webpack --mode production",
+    "server-build":"webpack --config ./webpack.server.config.js --mode production",
+    "server": "npm run frontend-build && npm run server-build && node ./dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
-  "babel-loader": "^8.0.5",
+    "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^2.1.0",
     "extract-text-webpack-plugin": "^3.0.2",

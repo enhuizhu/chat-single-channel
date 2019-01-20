@@ -1,23 +1,18 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const Fiber = require('fibers');
-// const nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 const webpack = require('webpack');
 
-// const htmlPlugin = new HtmlWebPackPlugin({
-//   template: './src/index.html',
-//   filename: './index.html'
-// });
-
 module.exports = {
   entry: {
-    'public/client': './src/index.js',
-    'public/css': './src/styles/index.scss',
+    'server': './server/server.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
+  target: 'node',
+  externals: nodeExternals(),
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -50,7 +45,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        // use: ["style-loader", "sass-loader"]
         use: [{
           loader: "style-loader"
         }, {
@@ -65,7 +59,4 @@ module.exports = {
       }
     ]
   }
-  // plugins: [
-  //   htmlPlugin,
-  // ]
 };

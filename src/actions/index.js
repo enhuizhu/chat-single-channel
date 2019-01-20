@@ -1,5 +1,6 @@
 import ApiService from '../services/apiService';
 import { LOGIN, LOGOUT } from '../reducers/userInfo';
+import { RECEIVE_GAMES } from '../reducers/games';
 
 const errorHandler = (e) => {
   alert(e.response.data.error);
@@ -33,5 +34,12 @@ export const logout = (userInfo) => {
     ApiService.logout(userInfo).then(res => {
       dispatch(logoutSync());
     }).catch(errorHandler);
+  }
+}
+
+export const receiveGames = (games) => {
+  return {
+    type: RECEIVE_GAMES,
+    payload: games
   }
 }

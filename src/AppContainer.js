@@ -12,7 +12,9 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    userInfo: state.userInfo
+    userInfo: state.userInfo,
+    games: state.games.games ? state.games.games : [],
+    categories: state.games.categories ? state.games.categories: [],
   }
 };
 

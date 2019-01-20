@@ -1,4 +1,4 @@
-const Html = ({ body, title }) => `
+const Html = ({ body, title, games }) => `
   <!DOCTYPE html>
   <html>
     <head>
@@ -6,8 +6,11 @@ const Html = ({ body, title }) => `
     </head>
     <body style="margin:0">
       <div id="app">${body}</div>
-      <script src='css.js'></script>
-      <script src='client.js'></script>
+      <script>
+        window._GAMES = ${JSON.stringify(games)}
+      </script>
+      <script src='script/css.js'></script>
+      <script src='script/client.js'></script>
     </body>
   </html>
 `;

@@ -18,12 +18,16 @@ export default (props) => {
           }}></input>
         </div>
         <div>
+          
           <Button btnClass='pull-right' onClick={() => {
             props.login({
               username: username.value,
               password: password.value
             });
           }}>Login</Button>
+
+          <Button btnClass='pull-right' onClick={props.onCancel}>Cancel</Button>
+          
           <div className='clear'></div>
         </div>
       </div>

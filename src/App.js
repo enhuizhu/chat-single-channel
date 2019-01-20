@@ -2,7 +2,6 @@ import React from 'react';
 import Logo from './components/logo/logo';
 import Profile from './components/profile/profile';
 import SearchBox from './components/searchBox/searchBox';
-import ApiService from './services/apiService';
 import ListWrapper from './components/listWrapper/listWrapper';
 import GameList from './components/gameList/gameList';
 import CategoriesList from './components/categoriesList/categoriesList';
@@ -13,8 +12,6 @@ export default class App extends React.Component {
     super();
     
     this.state = {
-      games: [],
-      categories: [],
       currentCategory: undefined,
       searchStr: undefined,
       showLoginForm: false
@@ -62,12 +59,6 @@ export default class App extends React.Component {
     });
   }
 
-  componentDidMount() {
-    ApiService.getGameData().then((data) => {
-      this.setState(data.data);
-    });
-  }
-
   componentWillReceiveProps(props) {
     if (props.userInfo) {
       this.setState({showLoginForm: false});
@@ -93,7 +84,7 @@ export default class App extends React.Component {
                 <ListWrapper title='Games'>
                   <GameList items={
                     this.filterGames(
-                      this.state.games, 
+                      this.props.games, 
                       this.state.currentCategory,
                       this.state.searchStr
                     )}>
@@ -102,7 +93,7 @@ export default class App extends React.Component {
               </div>
               <div style={{width: '20%'}} className='pull-left'>
                 <ListWrapper title='Categories'>
-                  <CategoriesList items={this.state.categories} categoryChange={this.onCategoryChange}></CategoriesList>
+                  <CategoriesList items={this.props.categories} categoryChange={this.onCategoryChange}></CategoriesList>
                 </ListWrapper>
               </div>
               <div className='clear'></div>
@@ -111,7 +102,9 @@ export default class App extends React.Component {
         </div>
         {
           this.state.showLoginForm && !this.props.userInfo?
-            <LoginForm></LoginForm> : ''
+            <LoginForm onCancel={() => {
+              this.setState({showLoginForm : false});
+            }}></LoginForm> : ''
         }           
       </div>
     );
