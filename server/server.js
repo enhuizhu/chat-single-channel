@@ -63,7 +63,7 @@ server.get('/', (req, res) => {
     </Provider>);
   
   const body = renderToString(frontend);
-  const title = 'Server side Rendering with Styled Components';
+  const title = 'Common on Casino';
   
   res.send(
     Html({

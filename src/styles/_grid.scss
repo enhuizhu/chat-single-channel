@@ -1,0 +1,37 @@
+@mixin gridWidth($index) {
+  width:#{($index / 12) * 100 + '%'};
+}
+
+[class^=col-] {
+  float: left;
+}
+
+@for $i from 1 through 12 {
+  .col-xs-#{$i} {
+    @include gridWidth($i);
+  }
+}
+
+@for $i from 1 through 12 {
+  @media (min-width: $tablet) {
+    .col-sm-#{$i} {
+      @include gridWidth($i);
+    } 
+  }
+}
+
+@for $i from 1 through 12 {
+  @media (min-width: $large-tablet) {
+    .col-md-#{$i} {
+      @include gridWidth($i);      
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @media (min-width: $desktop) {
+    .col-lg-#{$i} {
+      @include gridWidth($i);
+    }
+  }
+}

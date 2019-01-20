@@ -80,7 +80,7 @@ export default class App extends React.Component {
             <SearchBox className='pull-right margin-top-10' onSearch={this.onSearch}></SearchBox>
             <div className='clear'></div>
             <div>
-              <div style={{width:'80%'}} className='pull-left'>
+              <div className='pull-left col-xs-9'>
                 <ListWrapper title='Games'>
                   <GameList items={
                     this.filterGames(
@@ -91,7 +91,7 @@ export default class App extends React.Component {
                   </GameList>
                 </ListWrapper>
               </div>
-              <div style={{width: '20%'}} className='pull-left'>
+              <div className='pull-left col-xs-3'>
                 <ListWrapper title='Categories'>
                   <CategoriesList items={this.props.categories} categoryChange={this.onCategoryChange}></CategoriesList>
                 </ListWrapper>
