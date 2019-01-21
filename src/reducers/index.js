@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import { userInfo } from './userInfo';
-import { games } from './games';
+import { games, gameVisibility } from './games';
 
 export default combineReducers({
   userInfo,
-  games
+  games,
+  gameVisibility
 });

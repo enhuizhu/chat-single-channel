@@ -6,6 +6,7 @@ import ListWrapper from './components/listWrapper/listWrapper';
 import GameList from './components/gameList/gameList';
 import CategoriesList from './components/categoriesList/categoriesList';
 import LoginForm from './components/loginForm/loginFormContainer';
+import Button from './components/button/button';
 
 export default class App extends React.Component {
   constructor() {
@@ -105,7 +106,16 @@ export default class App extends React.Component {
             <LoginForm onCancel={() => {
               this.setState({showLoginForm : false});
             }}></LoginForm> : ''
-        }           
+        }
+        {
+          this.props.isPlayingGame ?
+            (<div className='game-container'>
+              <Button onClick={this.props.closeGame} btnClass='close-btn'>Close Game</Button>
+              <div id="game-launch">
+              </div>
+            </div>): ''
+        }
+           
       </div>
     );
   }
