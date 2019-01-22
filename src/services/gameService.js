@@ -1,6 +1,6 @@
-import store from '../store/store';
-import { playGame, closeGame} from '../actions'
+// import store from '../store/store';
 import AuthService from './autService';
+import { config } from '../config';
 
 export default class gameService {
   static open(gameCode) {
@@ -9,14 +9,12 @@ export default class gameService {
       return;
     }
 
-    store.dispatch(playGame());
+    window.open(`${config.api}/#/${gameCode}`);
+  }
 
+  static openGame(gameCode) {
     setTimeout(() => {
       comeon.game.launch(gameCode);      
     }, 200);
-  }
-
-  static close() {
-    store.dispatch(closeGame());
   }
 }

@@ -107,14 +107,14 @@ export default class App extends React.Component {
               this.setState({showLoginForm : false});
             }}></LoginForm> : ''
         }
-        {
+        {/* {
           this.props.isPlayingGame ?
             (<div className='game-container'>
               <Button onClick={this.props.closeGame} btnClass='close-btn'>Close Game</Button>
               <div id="game-launch">
               </div>
             </div>): ''
-        }
+        } */}
            
       </div>
     );

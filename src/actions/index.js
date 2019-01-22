@@ -1,6 +1,6 @@
 import ApiService from '../services/apiService';
 import { LOGIN, LOGOUT } from '../reducers/userInfo';
-import { RECEIVE_GAMES, PLAY_GAME, CLOSE_GAME } from '../reducers/games';
+import { RECEIVE_GAMES } from '../reducers/games';
 
 const errorHandler = (e) => {
   alert(e.response.data.error);
@@ -43,16 +43,3 @@ export const receiveGames = (games) => {
     payload: games
   };
 }
-
-export const playGame = () => {
-  return {
-    type: PLAY_GAME
-  };
-}
-
-export const closeGame = () => {
-  return {
-    type: CLOSE_GAME
-  };
-} 
-
