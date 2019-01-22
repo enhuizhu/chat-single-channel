@@ -2,6 +2,15 @@ export const LOGIN = 'login';
 export const LOGOUT = 'logout';
 
 const STORAGE_KEY = 'userInfo';
+
+if (typeof localStorage === 'undefined') {
+  var localStorage = {
+    getItem: function() { return null},
+    removeItem: function() {},
+    setItem: function() {},
+  }
+}
+
 let defaultState;
 
 try {
