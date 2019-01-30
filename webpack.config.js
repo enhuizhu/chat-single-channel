@@ -4,15 +4,15 @@ const Fiber = require('fibers');
 const path = require('path');
 const webpack = require('webpack');
 
-// const htmlPlugin = new HtmlWebPackPlugin({
-//   template: './src/index.html',
-//   filename: './index.html'
-// });
+const htmlPlugin = new HtmlWebPackPlugin({
+  template: './src/index.html',
+  filename: './index.html'
+});
 
 module.exports = {
   entry: {
     'public/client': './src/index.js',
-    'public/css': './src/styles/index.scss',
+    'public/service-worker': './src/service-worker.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -23,7 +23,8 @@ module.exports = {
       'process.env': {
         NODE_ENV: `'production'`
       }
-    })
+    }),
+    htmlPlugin
   ],
   module: {
     rules: [
@@ -49,7 +50,7 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         // use: ["style-loader", "sass-loader"]
         use: [{
           loader: "style-loader"
@@ -64,7 +65,7 @@ module.exports = {
         }]
       }
     ]
-  }
+  },
   // plugins: [
   //   htmlPlugin,
   // ]

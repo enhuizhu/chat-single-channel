@@ -1,25 +1,9 @@
-### 1. set up environment
-
+### run redis
 ```
-npm i
-```
-
-### 2. start the app
-
-```
-npm run server
+docker run -d --name redis -p 6379:6379 redis:latest
 ```
 
-### 3. test account
-
+### run app
 ```
-{
-  username: 'rebecka',
-  password: 'secret'
-}
-```
-
-### 4. run unit test
-```
-npm run test
+node server.js
 ```

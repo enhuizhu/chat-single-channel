@@ -1,0 +1,16 @@
+.messages {
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+input[type=text] {
+  width: calc(100vw - 100px);
+  float: left;
+  margin-right: 5px;
+}
+
+button {
+  position: relative;
+  top: -2px;
+}
