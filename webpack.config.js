@@ -12,7 +12,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 module.exports = {
   entry: {
     'public/client': './src/index.js',
-    'public/service-worker': './src/service-worker.js',
+    'service-worker': './src/service-worker.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

@@ -11,7 +11,7 @@
   <section id="app"></section>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('public/service-worker.js')
+      navigator.serviceWorker.register('service-worker.js', { scope: '/' })
       .then(function(registration) {
         // Successful registration
         console.log('Hooray. Registration successful, scope is:', registration.scope);
@@ -21,5 +21,5 @@
       });
     }
   </script>
-<script type="text/javascript" src="/public/client.js"></script><script type="text/javascript" src="/public/service-worker.js"></script></body>
+<script type="text/javascript" src="/public/client.js"></script><script type="text/javascript" src="/service-worker.js"></script></body>
 </html>
