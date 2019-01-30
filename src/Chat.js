@@ -3,8 +3,6 @@ import IoService from './services/ioService';
 import ApiService from './services/apiService';
 import DbService from './services/dbService';
 import './Chat.css';
-import Worker from './workerSetup';
-import ServiceWork from './service-worker';
 
 class App extends Component {
   constructor() {
